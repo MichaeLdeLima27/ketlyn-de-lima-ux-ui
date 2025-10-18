@@ -58,21 +58,41 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Projetos Section */}
-      <section className="projects-section" id="projetos">
-        <h2>Meus Projetos</h2>
-        <div className="projects-grid">
-          <a href="https://medium.com/@ketlynraa/ux-ui-design-m%C3%B3dulo-20-dicas-para-elevar-o-n%C3%ADvel-das-suas-entregas-de-design-09b0e556e925" target="_blank" rel="noreferrer" className="project-card">
-            <img src={project1} alt="Projeto 1" />
-          </a>
-          <a href="https://medium.com/@ketlynraa/estudo-de-caso-de-ux-ui-aplicativo-de-autismo-luke-da-idea%C3%A7%C3%A3o-ao-prot%C3%B3tipo-717c82e11c45" target="_blank" rel="noreferrer" className="project-card">
-            <img src={project2} alt="Projeto 2" />
-          </a>
-          <a href="https://medium.com/@ketlynraa/estudo-de-caso-projeto-de-parceria-com-banco-ita%C3%BA-8b44896f258e" target="_blank" rel="noreferrer" className="project-card">
-            <img src={project3} alt="Projeto 3" />
-          </a>
-        </div>
-      </section>
+  <section className="projects-section" id="projetos">
+  <h2>Meus Projetos</h2>
+  <div className="projects-grid">
+    <a
+      href="https://medium.com/@ketlynraa/ux-ui-design-m%C3%B3dulo-20-dicas-para-elevar-o-n%C3%ADvel-das-suas-entregas-de-design-09b0e556e925"
+      target="_blank"
+      rel="noreferrer"
+      className="project-card"
+    >
+      <img src={project1} alt="Projeto 1" />
+      <div className="overlay">VER PROJETO COMPLETO</div>
+    </a>
+
+    <a
+      href="https://medium.com/@ketlynraa/estudo-de-caso-de-ux-ui-aplicativo-de-autismo-luke-da-idea%C3%A7%C3%A3o-ao-prot%C3%B3tipo-717c82e11c45"
+      target="_blank"
+      rel="noreferrer"
+      className="project-card"
+    >
+      <img src={project2} alt="Projeto 2" />
+      <div className="overlay">VER PROJETO COMPLETO</div>
+    </a>
+
+    <a
+      href="https://medium.com/@ketlynraa/estudo-de-caso-projeto-de-parceria-com-banco-ita%C3%BA-8b44896f258e"
+      target="_blank"
+      rel="noreferrer"
+      className="project-card"
+    >
+      <img src={project3} alt="Projeto 3" />
+      <div className="overlay">VER PROJETO COMPLETO</div>
+    </a>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="footer">
