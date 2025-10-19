@@ -24,7 +24,7 @@ const Hero = () => {
       <section className="hero-section">
         <div className="hero-text">
           <h1>
-            UX/UI <br /> Design
+            UX/UI <br /> Designer
           </h1>
           <p>
             Crio experiências digitais que unem design, estética e funcionalidade.
@@ -48,7 +48,7 @@ const Hero = () => {
         <div className="description">
           <h2>Sobre Mim</h2>
           <p>
-            Sou Ketlyn Ribeiro Alves, formada em UX/UI Design, apaixonada por criar experiências digitais que unem design, estética e propósito. Acredito que boas interfaces têm o poder de transformar a forma como as pessoas interagem com o mundo digital, tornando cada experiência mais intuitiva e significativa.
+            Sou Ketlyn Ribeiro Alves, formada em UX/UI Designer, apaixonada por criar experiências digitais que unem designer, estética e propósito. Acredito que boas interfaces têm o poder de transformar a forma como as pessoas interagem com o mundo digital, tornando cada experiência mais intuitiva e significativa.
           </p>
           <div className="icons">
             <a href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
@@ -100,11 +100,11 @@ const Hero = () => {
         <div className="footer-profiles">
           <a href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/" target="_blank" rel="noreferrer" className="profile-link">
             <FaLinkedin />
-            <span>UX/UI Design - Ketlyn Ribeiro Alves</span>
+            <span>UX/UI Designer - Ketlyn Ribeiro Alves</span>
           </a>
           <a href="https://www.linkedin.com/in/michelap19/" target="_blank" rel="noreferrer" className="profile-link">
             <FaLinkedin />
-            <span>Desenvolvedor - Michael De Lima</span>
+            <span>Desenvolvedor Fullstack - Michael De Lima</span>
           </a>
         </div>
       </footer>
