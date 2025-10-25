@@ -1,11 +1,17 @@
-// Hero.jsx
+// src/components/Hero.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
-import profileImg from "../assets/profile.png";
+
+// Imagens
 import heroImg from "../assets/hero.jpg";
+import profileImg from "../assets/profile.png";
 import project1 from "../assets/hero4.png";
 import project2 from "../assets/hero2.png";
 import project3 from "../assets/hero3.png";
+import florImg from "../assets/flor2.jpg";
+
+// Ícones
 import { FaLinkedin, FaMedium, FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
@@ -26,9 +32,7 @@ const Hero = () => {
           <h1>
             UX/UI <br /> Designer
           </h1>
-          <p>
-            Crio experiências digitais que unem design, estética e funcionalidade.
-          </p>
+          <p>Crio experiências digitais que unem design, estética e funcionalidade.</p>
           <a href="https://wa.me/5541987997602" target="_blank" rel="noreferrer">
             <button className="hero-button">Entre em Contato</button>
           </a>
@@ -39,72 +43,91 @@ const Hero = () => {
       </section>
 
       {/* Sobre Section */}
-      <section className="about-section" id="sobre">
-        <div className="profile">
-          <img src={profileImg} alt="Perfil" />
-          <div className="circle"></div>
-        </div>
+      <section
+        className="about-section"
+        id="sobre"
+        style={{
+          backgroundImage: `url(${florImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="overlay-bg">
+          <div className="profile">
+            <img src={profileImg} alt="Perfil" />
+            <div className="circle"></div>
+          </div>
 
-        <div className="description">
-          <h2>Sobre Mim</h2>
-          <p>
-            Sou Ketlyn Ribeiro Alves, formada em UX/UI Designer, apaixonada por criar experiências digitais que unem designer, estética e propósito. Acredito que boas interfaces têm o poder de transformar a forma como as pessoas interagem com o mundo digital, tornando cada experiência mais intuitiva e significativa.
-          </p>
-          <div className="icons">
-            <a href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-            <a href="https://wa.me/5541987997602" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
-            <a href="https://medium.com/@ketlynraa" target="_blank" rel="noreferrer"><FaMedium /></a>
+          <div className="description">
+            <h2>Sobre Mim</h2>
+            <p>
+              Oi! Me chamo <strong>Ketlyn Ribeiro Alves</strong>, sou <strong>Product Designer</strong> e <strong>UX/UI Designer</strong>, apaixonada por criar experiências de interfaces digitais modernas, funcionais e centradas no usuário.
+            </p>
+            <p>
+              Atuo melhor como <strong>Design de Produto Digital</strong>, desde pesquisa com usuários, testes de usabilidade, definição de personas e mapas de jornada, até wireframes, protótipos de baixa e alta fidelidade e entrega de soluções web e mobile.
+            </p>
+            <p>
+              Minha parte favorita é desenhar experiências que equilibram as dores dos usuários com as necessidades do negócio. Para mim, design é uma ponte entre pessoas e soluções.
+            </p>
+
+            <div className="icons">
+              <a href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+              <a href="https://wa.me/5541987997602" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
+              <a href="https://medium.com/@ketlynraa" target="_blank" rel="noreferrer"><FaMedium /></a>
+            </div>
           </div>
         </div>
       </section>
 
-  <section className="projects-section" id="projetos">
-  <h2>Meus Projetos</h2>
-  <div className="projects-grid">
-    <a
-      href="https://medium.com/@ketlynraa/ux-ui-design-m%C3%B3dulo-20-dicas-para-elevar-o-n%C3%ADvel-das-suas-entregas-de-design-09b0e556e925"
-      target="_blank"
-      rel="noreferrer"
-      className="project-card"
-    >
-      <img src={project1} alt="Projeto 1" />
-      <div className="overlay">VER PROJETO COMPLETO</div>
-    </a>
+      {/* Projetos Section */}
+      <section className="projects-section" id="projetos">
+        <h2>Meus Projetos</h2>
 
-    <a
-      href="https://medium.com/@ketlynraa/estudo-de-caso-de-ux-ui-aplicativo-de-autismo-luke-da-idea%C3%A7%C3%A3o-ao-prot%C3%B3tipo-717c82e11c45"
-      target="_blank"
-      rel="noreferrer"
-      className="project-card"
-    >
-      <img src={project2} alt="Projeto 2" />
-      <div className="overlay">VER PROJETO COMPLETO</div>
-    </a>
+        <div className="projects-grid">
+          <Link to="/projetos/luke" className="project-card">
+            <img src={project1} alt="Aplicativo Luke" />
+            <div className="card-content">
+              <h3>Aplicativo Luke</h3>
+              <p>Estudo de caso sobre UX/UI Design de um app inclusivo para autistas.</p>
+            </div>
+          </Link>
 
-    <a
-      href="https://medium.com/@ketlynraa/estudo-de-caso-projeto-de-parceria-com-banco-ita%C3%BA-8b44896f258e"
-      target="_blank"
-      rel="noreferrer"
-      className="project-card"
-    >
-      <img src={project3} alt="Projeto 3" />
-      <div className="overlay">VER PROJETO COMPLETO</div>
-    </a>
-  </div>
-</section>
+          <Link to="/projetos/itau" className="project-card">
+            <img src={project2} alt="Projeto Itaú" />
+            <div className="card-content">
+              <h3>Projeto SumUP</h3>
+              <p>Redesign de experiência bancária com foco em acessibilidade e clareza.</p>
+            </div>
+          </Link>
 
+          <Link to="/projetos/dicas-ux" className="project-card">
+            <img src={project3} alt="Projeto Itau" />
+            <div className="card-content">
+              <h3>Projeto Itáu</h3>
+              <p>Redesign de experiência bancária com foco em acessibilidade e clareza.</p>
+            </div>
+          </Link>
+
+          <Link to="/projetos/novo" className="project-card">
+            <img src={heroImg} alt="Novo Projeto" />
+            <div className="card-content">
+              <h3>MKfood</h3>
+              <p>Projeto de um App de Delivery</p>
+            </div>
+          </Link>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="footer">
         <p>© 2025 Ketlyn de Lima. Todos os direitos reservados. Feito com ❤️</p>
         <div className="footer-profiles">
           <a href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/" target="_blank" rel="noreferrer" className="profile-link">
-            <FaLinkedin />
-            <span>UX/UI Designer - Ketlyn Ribeiro Alves</span>
+            <FaLinkedin /> <span>UX/UI Designer - Ketlyn Ribeiro Alves</span>
           </a>
           <a href="https://www.linkedin.com/in/michelap19/" target="_blank" rel="noreferrer" className="profile-link">
-            <FaLinkedin />
-            <span>Desenvolvedor Fullstack - Michael De Lima</span>
+            <FaLinkedin /> <span>Desenvolvedor Fullstack - Michael De Lima</span>
           </a>
         </div>
       </footer>
