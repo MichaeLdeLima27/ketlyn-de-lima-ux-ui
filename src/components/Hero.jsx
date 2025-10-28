@@ -7,7 +7,7 @@ import "../App.css";
 import heroImg from "../assets/hero.jpg";
 import profileImg from "../assets/profile.png";
 import project1 from "../assets/projetoluke.png";
-import project2 from "../assets/projetoitau.png";
+import project2 from "../assets/projetoitau2.png";
 import project3 from "../assets/projetosumup.png";
 import project4 from "../assets/projetomkfood.png";
 import florImg from "../assets/flor2.jpg";

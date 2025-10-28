@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Projetoitau from "../../assets/projetoitau.png";
+import Projetoitau from "../../assets/projetoitau2.png";
 import "./Projeto.css";
 
 export default function ProjetoLuke() {
