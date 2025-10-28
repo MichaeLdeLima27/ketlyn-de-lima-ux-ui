@@ -101,7 +101,6 @@ const Hero = () => {
               <p>Designer de experiência bancária com foco em acessibilidade e clareza.</p>
             </div>
           </Link>
-
           <Link to="/projetos/sumUp" className="project-card">
             <img src={project3} alt="Projeto Itau" />
             <div className="card-content">
