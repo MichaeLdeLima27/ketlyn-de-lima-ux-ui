@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import lukeHero from "../../assets/hero2.png";
+import lukeHero from "../../assets/projetoluke.png";
 import "./Projeto.css";
 
 export default function ProjetoLuke() {

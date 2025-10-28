@@ -6,9 +6,10 @@ import "../App.css";
 // Imagens
 import heroImg from "../assets/hero.jpg";
 import profileImg from "../assets/profile.png";
-import project1 from "../assets/hero4.png";
-import project2 from "../assets/hero2.png";
-import project3 from "../assets/hero3.png";
+import project1 from "../assets/projetoluke.png";
+import project2 from "../assets/projetoitau.png";
+import project3 from "../assets/projetosumup.png";
+import project4 from "../assets/projetomkfood.png";
 import florImg from "../assets/flor2.jpg";
 
 // Ícones
@@ -96,21 +97,21 @@ const Hero = () => {
           <Link to="/projetos/itau" className="project-card">
             <img src={project2} alt="Projeto Itaú" />
             <div className="card-content">
-              <h3>Projeto SumUP</h3>
-              <p>Redesign de experiência bancária com foco em acessibilidade e clareza.</p>
+              <h3>Projeto Itaú</h3>
+              <p>Designer de experiência bancária com foco em acessibilidade e clareza.</p>
             </div>
           </Link>
 
-          <Link to="/projetos/dicas-ux" className="project-card">
+          <Link to="/projetos/sumUp" className="project-card">
             <img src={project3} alt="Projeto Itau" />
             <div className="card-content">
-              <h3>Projeto Itáu</h3>
-              <p>Redesign de experiência bancária com foco em acessibilidade e clareza.</p>
+              <h3>Projeto SumUp</h3>
+              <p>Designer de landing page e email.</p>
             </div>
           </Link>
 
-          <Link to="/projetos/novo" className="project-card">
-            <img src={heroImg} alt="Novo Projeto" />
+          <Link to="/projetos/Mkfood" className="project-card">
+            <img src={project4} alt="Novo Projeto" />
             <div className="card-content">
               <h3>MKfood</h3>
               <p>Projeto de um App de Delivery</p>

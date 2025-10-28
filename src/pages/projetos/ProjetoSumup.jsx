@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import lukeHero from "../../assets/hero2.png";
+import ProjetoSumup from "../../assets/projetosumup.png";
 import "./Projeto.css";
 
 export default function ProjetoLuke() {
@@ -14,37 +14,36 @@ export default function ProjetoLuke() {
       </button>
 
       <div className="projeto-hero">
-        <img src={lukeHero} alt="Aplicativo Luke" />
-        <h1>Aplicativo Luke</h1>
-        <p className="subtitulo">Estudo de caso UX/UI Design • Inclusão e acessibilidade</p>
+        <img src={ProjetoSumup} alt="Aplicativo Luke" />
+        <h1>Projeto SumUp</h1>
+        <p className="subtitulo">Designer de landing page e email.</p>
       </div>
 
       <div className="projeto-conteudo">
         <h2>📖 Contexto</h2>
         <p>
-          O Luke é um aplicativo criado para auxiliar na comunicação e rotina de pessoas autistas,
-          oferecendo uma interface visual intuitiva e adaptável às necessidades de cada usuário.
+          O projeto SumUp teve como objetivo melhorar a experiência digital de usuários que utilizam a plataforma,
+          focando em simplicidade, clareza e acessibilidade para todos os perfis de usuários.
         </p>
 
         <h2>🎯 Objetivo</h2>
         <p>
-          Melhorar a experiência e acessibilidade digital para pessoas com autismo, reduzindo a
-          complexidade e ampliando a autonomia do usuário.
+          Criar uma interface intuitiva e inclusiva, que facilite tarefas complexas, aumente a autonomia do usuário
+          e reduza frustrações no uso diário da plataforma.
         </p>
 
         <h2>💡 Processo</h2>
         <p>
-          Foram realizadas entrevistas com cuidadores e terapeutas, criação de personas, jornada
-          do usuário, protótipos de baixa e alta fidelidade e testes com usuários reais.
+          Foram conduzidas pesquisas com usuários, análises de fluxos existentes, criação de personas, wireframes
+          e protótipos de alta fidelidade, seguidos de testes de usabilidade para validar soluções.
         </p>
 
-        <img className="projeto-imagem" src={lukeHero} alt="Tela do aplicativo Luke" />
+        <img className="projeto-imagem" src={ProjetoSumup} alt="Tela do aplicativo Luke" />
 
         <h2>🧭 Resultado</h2>
         <p>
-          O design final priorizou clareza, contraste e símbolos visuais simples. O resultado foi
-          uma experiência mais empática e funcional, fortalecendo o vínculo entre usuário e
-          cuidador.
+          O Designer proporcionou uma experiência mais clara e funcional, com interface amigável, elementos visuais
+          consistentes e fluxo simplificado, garantindo maior satisfação e engajamento dos usuários
         </p>
 
         <a

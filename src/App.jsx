@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Cursor from "./components/Cursor";
 
 // Pages
 import Hero from "./components/Hero";
@@ -18,6 +19,7 @@ const NotFound = () => (
 function App() {
   return (
     <Router>
+      <Cursor />
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/projetos/luke" element={<ProjetoLuke />} />
