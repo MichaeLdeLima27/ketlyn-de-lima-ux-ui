@@ -7,7 +7,7 @@ import "../App.css";
 import heroImg from "../assets/hero.jpg";
 import profileImg from "../assets/profile.png";
 import project1 from "../assets/projetoluke.png";
-import project2 from "../assets/projetoitau.png";
+import project2 from "../assets/Projetoitau.png";
 import project3 from "../assets/projetosumup.png";
 import project4 from "../assets/projetomkfood.png";
 import florImg from "../assets/flor2.jpg";
@@ -101,7 +101,7 @@ const Hero = () => {
               <p>Designer de experiência bancária com foco em acessibilidade e clareza.</p>
             </div>
           </Link>
-          <Link to="/projetos/sumUp" className="project-card">
+          <Link to="/projetos/sumup" className="project-card">
             <img src={project3} alt="Projeto Itau" />
             <div className="card-content">
               <h3>Projeto SumUp</h3>
@@ -109,7 +109,7 @@ const Hero = () => {
             </div>
           </Link>
 
-          <Link to="/projetos/Mkfood" className="project-card">
+          <Link to="/projetos/food" className="project-card">
             <img src={project4} alt="Novo Projeto" />
             <div className="card-content">
               <h3>MKfood</h3>
