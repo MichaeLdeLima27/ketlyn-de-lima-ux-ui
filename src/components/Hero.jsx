@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 
@@ -11,11 +11,32 @@ import project2 from "../assets/projetoitau2.png";
 import project3 from "../assets/projetosumup.png";
 import project4 from "../assets/projetomkfood.png";
 import florImg from "../assets/flor2.jpg";
+import Curriculo from "../assets/curriculo-ketlyn-ui-ux-designer.pdf";
 
 // Ícones
-import { FaLinkedin, FaMedium, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaMedium, FaWhatsapp, FaArrowUp } from "react-icons/fa";
 
 const Hero = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  // Mostrar o botão "voltar ao topo" ao rolar a página
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setShowScroll(true);
+      } else {
+        setShowScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Função para voltar ao topo
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="container">
       {/* Navbar */}
@@ -24,6 +45,9 @@ const Hero = () => {
         <div className="navbar-right">
           <a href="#projetos">Projetos</a>
           <a href="#sobre">Sobre</a>
+          <a href={Curriculo} download className="curriculo-btn">
+            Baixar Currículo
+          </a>
         </div>
       </nav>
 
@@ -33,8 +57,15 @@ const Hero = () => {
           <h1>
             UX/UI <br /> Designer
           </h1>
-          <p>Crio experiências digitais que unem design, estética e funcionalidade.</p>
-          <a href="https://wa.me/5541987997602" target="_blank" rel="noreferrer">
+          <p>
+            Crio experiências digitais que unem design, estética e
+            funcionalidade.
+          </p>
+          <a
+            href="https://wa.me/5541987997602"
+            target="_blank"
+            rel="noreferrer"
+          >
             <button className="hero-button">Entre em Contato</button>
           </a>
         </div>
@@ -63,19 +94,45 @@ const Hero = () => {
           <div className="description">
             <h2>Sobre Mim</h2>
             <p>
-              Oi! Me chamo <strong>Ketlyn Ribeiro Alves</strong>, sou <strong>Product Designer</strong> e <strong>UX/UI Designer</strong>, apaixonada por criar experiências de interfaces digitais modernas, funcionais e centradas no usuário.
+              Oi! Me chamo <strong>Ketlyn Ribeiro Alves</strong>, sou{" "}
+              <strong>Product Designer</strong> e <strong>UX/UI Designer</strong>,
+              apaixonada por criar experiências de interfaces digitais modernas,
+              funcionais e centradas no usuário.
             </p>
             <p>
-              Atuo melhor como <strong>Design de Produto Digital</strong>, desde pesquisa com usuários, testes de usabilidade, definição de personas e mapas de jornada, até wireframes, protótipos de baixa e alta fidelidade e entrega de soluções web e mobile.
+              Atuo melhor como <strong>Design de Produto Digital</strong>, desde
+              pesquisa com usuários, testes de usabilidade, definição de personas
+              e mapas de jornada, até wireframes, protótipos de baixa e alta
+              fidelidade e entrega de soluções web e mobile.
             </p>
             <p>
-              Minha parte favorita é desenhar experiências que equilibram as dores dos usuários com as necessidades do negócio. Para mim, design é uma ponte entre pessoas e soluções.
+              Minha parte favorita é desenhar experiências que equilibram as dores
+              dos usuários com as necessidades do negócio. Para mim, design é uma
+              ponte entre pessoas e soluções.
             </p>
 
             <div className="icons">
-              <a href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-              <a href="https://wa.me/5541987997602" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
-              <a href="https://medium.com/@ketlynraa" target="_blank" rel="noreferrer"><FaMedium /></a>
+              <a
+                href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://wa.me/5541987997602"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaWhatsapp />
+              </a>
+              <a
+                href="https://medium.com/@ketlynraa"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaMedium />
+              </a>
             </div>
           </div>
         </div>
@@ -90,7 +147,10 @@ const Hero = () => {
             <img src={project1} alt="Aplicativo Luke" />
             <div className="card-content">
               <h3>Aplicativo Luke</h3>
-              <p>Estudo de caso sobre UX/UI Design de um app inclusivo para autistas.</p>
+              <p>
+                Estudo de caso sobre UX/UI Design de um app inclusivo para
+                autistas.
+              </p>
             </div>
           </Link>
 
@@ -98,11 +158,15 @@ const Hero = () => {
             <img src={project2} alt="Projeto Itaú" />
             <div className="card-content">
               <h3>Projeto Itaú</h3>
-              <p>Designer de experiência bancária com foco em acessibilidade e clareza.</p>
+              <p>
+                Designer de experiência bancária com foco em acessibilidade e
+                clareza.
+              </p>
             </div>
           </Link>
+
           <Link to="/projetos/sumup" className="project-card">
-            <img src={project3} alt="Projeto Itau" />
+            <img src={project3} alt="Projeto SumUp" />
             <div className="card-content">
               <h3>Projeto SumUp</h3>
               <p>Designer de landing page e email.</p>
@@ -118,19 +182,41 @@ const Hero = () => {
           </Link>
         </div>
       </section>
+        <div className="projetos-btn">
+          <a href={Curriculo} download>
+            <button className="hero-button">Baixar Currículo</button>
+          </a>
+        </div>
 
       {/* Footer */}
       <footer className="footer">
         <p>© 2025 Ketlyn de Lima. Todos os direitos reservados. Feito com ❤️</p>
         <div className="footer-profiles">
-          <a href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/" target="_blank" rel="noreferrer" className="profile-link">
+          <a
+            href="https://www.linkedin.com/in/ketlyn-ribeiro-alves/"
+            target="_blank"
+            rel="noreferrer"
+            className="profile-link"
+          >
             <FaLinkedin /> <span>UX/UI Designer - Ketlyn Ribeiro Alves</span>
           </a>
-          <a href="https://www.linkedin.com/in/michelap19/" target="_blank" rel="noreferrer" className="profile-link">
+          <a
+            href="https://www.linkedin.com/in/michelap19/"
+            target="_blank"
+            rel="noreferrer"
+            className="profile-link"
+          >
             <FaLinkedin /> <span>Desenvolvedor Fullstack - Michael De Lima</span>
           </a>
         </div>
       </footer>
+
+      {/* Botão de voltar ao topo */}
+      {showScroll && (
+        <button className="scroll-top" onClick={scrollToTop}>
+          <FaArrowUp />
+        </button>
+      )}
     </div>
   );
 };
