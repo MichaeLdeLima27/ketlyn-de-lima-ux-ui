@@ -475,3 +475,21 @@ a {
   background: #eb9ac0;
   color: #fff;
 }
+/* Responsividade do botão Currículo */
+@media (max-width: 768px) {
+  .curriculo-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    border-width: 1.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .curriculo-btn {
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
