@@ -1,10 +1,11 @@
-// src/components/Hero.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "../App.css";
 
 // Imagens
-import heroImg from "../assets/hero.jpg";
+import heroImg from "../assets/fundohero.jpg";
 import profileImg from "../assets/profile.png";
 import project1 from "../assets/projetoluke.png";
 import project2 from "../assets/projetoitau2.png";
@@ -18,34 +19,49 @@ import { FaLinkedin, FaMedium, FaWhatsapp, FaArrowUp } from "react-icons/fa";
 
 const Hero = () => {
   const [showScroll, setShowScroll] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Mostrar o botão "voltar ao topo" ao rolar a página
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 400) {
-        setShowScroll(true);
-      } else {
-        setShowScroll(false);
-      }
-    };
+    AOS.init({ duration: 1200, once: true });
+  }, []);
+
+  // Mostrar botão "voltar ao topo"
+  useEffect(() => {
+    const handleScroll = () => setShowScroll(window.scrollY > 400);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Função para voltar ao topo
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <div className="container">
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-left">Ketlyn Ribeiro Alves</div>
-        <div className="navbar-right">
-          <a href="#projetos">Projetos</a>
-          <a href="#sobre">Sobre</a>
-          <a href={Curriculo} download className="curriculo-btn">
+
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div className={`navbar-right ${menuOpen ? "active" : ""}`}>
+          <a href="#projetos" onClick={() => setMenuOpen(false)}>
+            Projetos
+          </a>
+          <a href="#sobre" onClick={() => setMenuOpen(false)}>
+            Sobre
+          </a>
+          <a
+            href={Curriculo}
+            download
+            className="curriculo-btn"
+            onClick={() => setMenuOpen(false)}
+          >
             Baixar Currículo
           </a>
         </div>
@@ -53,7 +69,7 @@ const Hero = () => {
 
       {/* Hero Section */}
       <section className="hero-section">
-        <div className="hero-text">
+        <div className="hero-text" data-aos="fade-up" data-aos-duration="3000">
           <h1>
             UX/UI <br /> Designer
           </h1>
@@ -69,7 +85,8 @@ const Hero = () => {
             <button className="hero-button">Entre em Contato</button>
           </a>
         </div>
-        <div className="hero-image">
+
+        <div className="hero-image" data-aos="fade-left" data-aos-duration="3000">
           <img src={heroImg} alt="UX/UI" />
         </div>
       </section>
@@ -86,29 +103,29 @@ const Hero = () => {
         }}
       >
         <div className="overlay-bg">
-          <div className="profile">
+          <div className="profile" data-aos="zoom-in" data-aos-duration="3000">
             <img src={profileImg} alt="Perfil" />
-            <div className="circle"></div>
           </div>
 
-          <div className="description">
+          <div className="description" data-aos="fade-up" data-aos-duration="3000">
             <h2>Sobre Mim</h2>
             <p>
               Oi! Me chamo <strong>Ketlyn Ribeiro Alves</strong>, sou{" "}
-              <strong>Product Designer</strong> e <strong>UX/UI Designer</strong>,
-              apaixonada por criar experiências de interfaces digitais modernas,
-              funcionais e centradas no usuário.
+              <strong>Product Designer</strong> e{" "}
+              <strong>UX/UI Designer</strong>, apaixonada por criar experiências
+              de interfaces digitais modernas, funcionais e centradas no
+              usuário.
             </p>
             <p>
               Atuo melhor como <strong>Design de Produto Digital</strong>, desde
-              pesquisa com usuários, testes de usabilidade, definição de personas
-              e mapas de jornada, até wireframes, protótipos de baixa e alta
-              fidelidade e entrega de soluções web e mobile.
+              pesquisa com usuários, testes de usabilidade, definição de
+              personas e mapas de jornada, até wireframes, protótipos e entrega
+              de soluções web e mobile.
             </p>
             <p>
-              Minha parte favorita é desenhar experiências que equilibram as dores
-              dos usuários com as necessidades do negócio. Para mim, design é uma
-              ponte entre pessoas e soluções.
+              Minha parte favorita é desenhar experiências que equilibram as
+              dores dos usuários com as necessidades do negócio. Para mim,
+              design é uma ponte entre pessoas e soluções.
             </p>
 
             <div className="icons">
@@ -140,10 +157,9 @@ const Hero = () => {
 
       {/* Projetos Section */}
       <section className="projects-section" id="projetos">
-        <h2>Meus Projetos</h2>
-
+        <h2 data-aos="fade-up" data-aos-duration="2000">Meus Projetos</h2>
         <div className="projects-grid">
-          <Link to="/projetos/luke" className="project-card">
+          <Link to="/projetos/luke" className="project-card" data-aos="zoom-in" data-aos-duration="3000">
             <img src={project1} alt="Aplicativo Luke" />
             <div className="card-content">
               <h3>Aplicativo Luke</h3>
@@ -154,7 +170,7 @@ const Hero = () => {
             </div>
           </Link>
 
-          <Link to="/projetos/itau" className="project-card">
+          <Link to="/projetos/itau" className="project-card" data-aos="zoom-in"data-aos-duration="3000">
             <img src={project2} alt="Projeto Itaú" />
             <div className="card-content">
               <h3>Projeto Itaú</h3>
@@ -165,7 +181,7 @@ const Hero = () => {
             </div>
           </Link>
 
-          <Link to="/projetos/sumup" className="project-card">
+          <Link to="/projetos/sumup" className="project-card" data-aos="zoom-in" data-aos-duration="3000">
             <img src={project3} alt="Projeto SumUp" />
             <div className="card-content">
               <h3>Projeto SumUp</h3>
@@ -173,7 +189,7 @@ const Hero = () => {
             </div>
           </Link>
 
-          <Link to="/projetos/food" className="project-card">
+          <Link to="/projetos/food" className="project-card" data-aos="zoom-in" data-aos-duration="3000">
             <img src={project4} alt="Novo Projeto" />
             <div className="card-content">
               <h3>MKfood</h3>
@@ -182,11 +198,12 @@ const Hero = () => {
           </Link>
         </div>
       </section>
-        <div className="projetos-btn">
-          <a href={Curriculo} download>
-            <button className="hero-button1">Baixar Currículo</button>
-          </a>
-        </div>
+
+      <div className="projetos-btn">
+        <a href={Curriculo} download>
+          <button className="hero-button1">Baixar Currículo</button>
+        </a>
+      </div>
 
       {/* Footer */}
       <footer className="footer">

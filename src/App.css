@@ -55,7 +55,7 @@ a {
   color: #eb9ac0;
 }
 
-/* ===== BOTÃO CURRÍCULO (ao lado dos links) ===== */
+/* ===== BOTÃO CURRÍCULO ===== */
 .curriculo-btn {
   border: 2px solid #eb9ac0;
   border-radius: 30px;
@@ -145,7 +145,7 @@ button,
   background: linear-gradient(135deg, #d77da8, #eb9ac0);
 }
 
-/* ===== BOTÃO PROJETO (centralizado) ===== */
+/* ===== BOTÃO PROJETO ===== */
 .projeto-botao {
   display: flex;
   justify-content: center;
@@ -225,37 +225,6 @@ button,
   border-radius: 20px;
   margin-bottom: 90px;
   margin-left: 50px;
-}
-
-/* ===== HERO RESPONSIVO ===== */
-@media (max-width: 600px) {
-  .hero-section {
-    flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
-    padding: 2rem 5%;
-  }
-
-  .hero-text h1 {
-    font-size: 2.8rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .hero-button {
-    width: 100%;
-    max-width: 300px;
-    padding: 1rem 1.5rem;
-    font-size: 1.2rem;
-  }
-
-  .hero-image img {
-    width: 100%;
-    border-radius: 15px;
-    margin: 0 auto 30px auto;
-  }
 }
 
 /* ===== SOBRE SECTION ===== */
@@ -418,7 +387,7 @@ button,
   line-height: 1.6;
 }
 
-/* Fade in animation */
+/* ===== ANIMAÇÃO ===== */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -433,44 +402,103 @@ button,
 /* ===== FOOTER ===== */
 .footer {
   padding: 3rem 10%;
-  text-align: center;
-  background-color: #f4f4f9;
+  background: linear-gradient(135deg, #f9f9fb, #ececf3);
   color: #222;
+  text-align: center;
   font-size: 1rem;
-  border-top: 1px solid #e0e0e0;
-  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  margin-top: 60px;
+  position: relative;
 }
 
 .footer p {
-  margin-bottom: 1.5rem;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 2rem;
+  letter-spacing: 0.5px;
 }
 
 .footer-profiles {
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
 }
 
 .profile-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
   font-weight: 500;
   color: #007bff;
-  cursor: pointer;
-  transition: 0.3s;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.profile-link:hover {
-  color: #0056b3;
-  transform: scale(1.05);
+.profile-link span {
+  font-size: 0.95rem;
 }
 
 .profile-link svg {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
 }
 
+.profile-link:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+}
+
+.profile-link:hover svg {
+  transform: rotate(-10deg) scale(1.2);
+}
+/* ===== FOOTER RESPONSIVO ===== */
+@media (max-width: 600px) {
+  .footer-profiles {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .profile-link {
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .profile-link span {
+    display: block;
+    line-height: 1.4;
+  }
+
+  .profile-link svg {
+    font-size: 1.3rem;
+  }
+}
+
+/* Ajuste específico para o link do desenvolvedor no mobile */
+@media (max-width: 600px) {
+  .footer-profiles a:last-child span {
+    font-size: 0.85rem;
+    display: block;
+    line-height: 1.3;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .scroll-top {
+    bottom: 230px; /* sobe um pouco pra não cobrir os links do footer */
+    right: 20px;
+  }
+}
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
   .projects-grid {
@@ -486,17 +514,85 @@ button,
   }
 }
 
-@media (max-width: 768px) {
-  .curriculo-btn {
-    padding: 0.6rem 1.2rem;
+/* ===== MOBILE MELHORADO ===== */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 5%;
+  }
+
+  .navbar-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 3rem 5%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin: 0 auto 1.5rem;
+    max-width: 90%;
+  }
+
+  .hero-button,
+  .hero-button1 {
+    width: 100%;
+    max-width: 320px;
+    padding: 1rem;
+    font-size: 1rem;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .hero-image img {
+    width: 100%;
+    margin: 0 auto 40px;
+    border-radius: 16px;
+  }
+
+  .about-section {
+    padding: 4rem 6%;
+  }
+
+  .profile img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .description h2 {
+    font-size: 1.5rem;
+  }
+
+  .description p {
+    font-size: 1rem;
+    text-indent: 1rem;
+  }
+
+  .projects-section {
+    padding: 4rem 6%;
+  }
+
+  .projects-section h2 {
+    font-size: 2rem;
+  }
+
+  .project-card img {
+    height: 220px;
+  }
+
+  .footer {
+    padding: 2rem 5%;
     font-size: 0.9rem;
   }
 }
 
-@media (max-width: 480px) {
-  .curriculo-btn {
-    display: block;
-    margin: 10px auto;
-    text-align: center;
-  }
-}
