@@ -184,7 +184,7 @@ const Hero = () => {
       </section>
         <div className="projetos-btn">
           <a href={Curriculo} download>
-            <button className="hero-button">Baixar Currículo</button>
+            <button className="hero-button1">Baixar Currículo</button>
           </a>
         </div>
 

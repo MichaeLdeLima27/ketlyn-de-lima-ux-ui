@@ -1,108 +1,274 @@
+/* ======= Estilo base ======= */
 .projeto-page {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background-color: #fafafa;
   padding-bottom: 6rem;
+  overflow-x: hidden;
+  animation: fadeIn 1.2s ease;
 }
 
+/* ======= Botão Voltar ======= */
+.voltar-btn {
+  margin: 2rem 0 0 1.5rem;
+  padding: 0.8rem 1.8rem;
+  background: linear-gradient(135deg, #eb9ac0, #d77da8);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(235, 154, 192, 0.4);
+}
+
+.voltar-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(235, 154, 192, 0.5);
+  background: linear-gradient(135deg, #d77da8, #eb9ac0);
+}
+
+/* ======= Seção Hero ======= */
 .projeto-hero {
-  position: relative;
   text-align: center;
   padding: 6rem 10% 3rem;
+  animation: fadeUp 1.3s ease;
 }
 
 .projeto-hero img {
   width: 100%;
   max-height: 520px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.projeto-hero img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.25);
 }
 
 .projeto-hero h1 {
   font-size: 3rem;
-  font-weight: 400;
+  font-weight: 600;
   margin-top: 2rem;
+  color: #111;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .projeto-hero .subtitulo {
   font-size: 1.2rem;
-  color: #888;
+  color: #777;
   margin-top: 0.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-align: center;
 }
 
+/* ======= Conteúdo ======= */
 .projeto-conteudo {
   max-width: 900px;
   margin: 4rem auto 0;
   padding: 0 1.5rem;
+  animation: fadeUp 1.5s ease;
+  text-align: center;
 }
 
 .projeto-conteudo h2 {
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin: 3rem 0 1rem;
   color: #111;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.projeto-conteudo h2::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #eb9ac0, #d77da8);
+  border-radius: 3px;
 }
 
 .projeto-conteudo p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #444;
+  margin-top: 1rem;
+  text-align: justify;
+  animation: fadeUp 1s ease;
 }
 
+/* ======= Imagens ======= */
 .projeto-imagem {
   width: 100%;
   border-radius: 20px;
   margin: 3rem 0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
+.projeto-imagem:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ======= Botão principal (Figma) ======= */
 .projeto-botao {
   display: inline-block;
   margin-top: 2rem;
-  background-color: #eb9ac0;
+  background: linear-gradient(135deg, #eb9ac0, #d77da8);
   color: #fff;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.8rem;
   border-radius: 50px;
-  font-weight: 500;
-  transition: 0.3s;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-
-.voltar-btn {
-  display: inline-block;
-  margin: 2rem 0 0 1.5rem;
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
-  background-color: #f0f0f0;
-  color: #333;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.voltar-btn:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(235, 154, 192, 0.4);
+  text-decoration: none;
 }
 
 .projeto-botao:hover {
-  background-color: #d77da8;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 20px rgba(235, 154, 192, 0.6);
+  background: linear-gradient(135deg, #d77da8, #eb9ac0);
+}
+
+/* ======= Botão de Subir ao Topo ======= */
+.topo-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(135deg, #eb9ac0, #d77da8);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(235, 154, 192, 0.4);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+.topo-btn:hover {
+  background: linear-gradient(135deg, #d77da8, #eb9ac0);
+  transform: translateY(-4px);
+  opacity: 1;
+}
+
+/* ======= Animações ======= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease both;
+}
+
+.fade-up {
+  animation: fadeUp 1.5s ease both;
+}
+
+/* ======= Responsividade ======= */
+@media (max-width: 1024px) {
+  .projeto-hero {
+    padding: 4rem 6%;
+  }
 }
 
 @media (max-width: 768px) {
   .projeto-hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
+  }
+
+  .projeto-hero .subtitulo {
+    font-size: 1.1rem;
+  }
+
+  .projeto-conteudo h2 {
+    font-size: 1.5rem;
+  }
+
+  .projeto-conteudo p {
+    font-size: 1rem;
+  }
+
+  .projeto-botao {
+    width: 100%;
+    text-align: center;
+  }
+
+  .topo-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .voltar-btn {
+    margin-left: 1rem;
+    padding: 0.6rem 1.4rem;
   }
 
   .projeto-hero img {
-    border-radius: 12px;
+    border-radius: 14px;
   }
 
   .projeto-conteudo {
     padding: 0 1rem;
   }
+}
+
+.projeto-conteudo p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-top: 1rem;
+  text-align: justify;
+  animation: fadeUp 1s ease;
+
+  /* Fundo transparente tipo card */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  border: 1px solid rgba(235, 154, 192, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* Transição suave para hover */
+  transition: background 0.3s ease;
+}
+
+.projeto-conteudo p:hover {
+  background: rgba(235, 154, 192, 0.2); /* rosinha claro */
 }
